@@ -10,9 +10,9 @@ module FbAuth
     end
 
     def access_token
-      response = @connection.get '/oauth/access_token', { client_id: @app_id, client_secret: @app_secret,
+      response = @connection.get('/oauth/access_token', { client_id: @app_id, client_secret: @app_secret,
                                                          grant_type: 'client_credentials'
-      }
+      })
 
       data = JSON.parse(response.body)
 
@@ -24,6 +24,5 @@ module FbAuth
         data['access_token']
       end
     end
-
   end
 end
