@@ -9,7 +9,7 @@ module FbAuth
     end
 
     def id
-      response = @connection.get @user_id.to_s, { fields: 'first_name,last_name', access_token: @access_token }
+      response = @connection.get(@user_id.to_s, { fields: 'first_name,last_name', access_token: @access_token })
 
       JSON.parse(response.body)
     end
